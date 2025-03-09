@@ -1,0 +1,24 @@
+def get_grade(marks):
+    if marks < 50:
+        return 'F'
+    elif 50 <= marks <= 60:
+        return 'E'
+    elif 61 <= marks <= 70:
+        return 'D'
+    elif 71 <= marks <= 80:
+        return 'C'
+    elif 81 <= marks <= 90:
+        return 'B'
+    elif 91 <= marks <= 100:
+        return 'A'
+    else:
+        return 'Invalid marks! Please enter a number between 1 and 100.'
+
+try:
+    marks = int(input("Enter the student's marks (1-100): "))
+    if 1 <= marks <= 100:
+        print(f"The grade is: {get_grade(marks)}")
+    else:
+        print("Invalid input! Marks should be between 1 and 100.")
+except ValueError:
+    print("Invalid input! Please enter a numeric value.")
