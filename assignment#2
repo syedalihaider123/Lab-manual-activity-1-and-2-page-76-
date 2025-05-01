@@ -1,48 +1,49 @@
+
 # Original dictionary with 8 key-value pairs
 student_info = {
-    "name": "ali haider",
-    "age": 21,
-    "gender": "male",
-    "major": "business administration",
-    "GPA": 3.4,
-    "semester": "spring 2025",
-    "email": "alihaider@example.com",
-    "is_enrolled": True
+    'name': 'ali haider',
+    'age': 21,
+    'gender': 'male',
+    'major': 'business administration',
+    'GPA': 3.4,
+    'semester': 'spring 2025',
+    'email': 'alihaider@example.com',
+    'is_enrolled': True
 }
 
 # 1. keys() - returns all keys in the dictionary
-print("Keys:", student_info.keys())  # Shows the list of all keys
+print('Keys:', student_info.keys())  # Shows the list of all keys
 
 # 2. values() - returns all values in the dictionary
-print("Values:", student_info.values())  # Shows the list of all values
+print('Values:', student_info.values())  # Shows the list of all values
 
 # 3. items() - returns all key-value pairs as tuples
-print("Items:", student_info.items())  # Shows key-value pairs as (key, value)
+print('Items:', student_info.items())  # Shows key-value pairs as (key, value)
 
 # 4. get() - retrieves the value for the given key (safe way to access values)
-print("Get GPA:", student_info.get("GPA"))  # Gets the GPA value safely
+print('Get GPA:', student_info.get('GPA'))  # Gets the GPA value safely
 
 # 5. update() - updates existing keys or adds new key-value pairs
-student_info.update({"GPA": 3.6, "department": "Management Sciences"})
-print("After update:", student_info)  # Updates GPA and adds department key
+student_info.update({'GPA': 3.6, 'department': 'Management Sciences'})
+print('After update:', student_info)  # Updates GPA and adds department key
 
 # 6. pop() - removes a key and returns its value
-popped_semester = student_info.pop("semester")
-print("Popped 'semester':", popped_semester)  # Removes 'semester' and returns its value
-print("After pop:", student_info)  # Shows the dictionary after removal
+popped_semester = student_info.pop('semester')
+print('Popped "semester":', popped_semester)  # Removes 'semester' and returns its value
+print('After pop:', student_info)  # Shows the dictionary after removal
 
 # 7. setdefault() - sets a default value for a key if the key does not exist
-student_info.setdefault("hostel", "Not assigned")
-print("After setdefault (hostel):", student_info)  # Adds 'hostel' key if not present
+student_info.setdefault('hostel', 'Not assigned')
+print('After setdefault (hostel):', student_info)  # Adds 'hostel' key if not present
 
 # 8. copy() - creates a shallow copy of the dictionary
 student_copy = student_info.copy()
-print("Copied dictionary:", student_copy)  # Creates a copy of the original dictionary
+print('Copied dictionary:', student_copy)  # Creates a copy of the original dictionary
 
 # 9. clear() - removes all key-value pairs from the dictionary
 student_copy.clear()
-print("Cleared copied dictionary:", student_copy)  # Clears all data in the copy
+print('Cleared copied dictionary:', student_copy)  # Clears all data in the copy
 
 # 10. title() - applies to a string to capitalize the first letter of each word
-student_info["name"] = student_info["name"].title()
-print("Name after title():", student_info["name"])  # Capitalizes each word in the name
+student_info['name'] = student_info['name'].title()
+print('Name after title():', student_info['name'])  # Capitalizes each word in the name
