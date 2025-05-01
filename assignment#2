@@ -44,6 +44,7 @@ print('Copied dictionary:', student_copy)  # Creates a copy of the original dict
 student_copy.clear()
 print('Cleared copied dictionary:', student_copy)  # Clears all data in the copy
 
-# 10. title() - applies to a string to capitalize the first letter of each word
-student_info['name'] = student_info['name'].title()
-print('Name after title():', student_info['name'])  # Capitalizes each word in the name
+# 10. del - deletes a key-value pair from the dictionary
+del student_info['is_enrolled']
+print('After deleting "is_enrolled":', student_info)  # Removes the 'is_enrolled' key
+
