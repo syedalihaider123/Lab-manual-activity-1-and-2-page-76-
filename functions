@@ -1,0 +1,133 @@
+##creating a simple function
+def say_hello():
+    """Shows a basic welcome message."""  # Docstring explaining the function purpose
+    print("Hi there!")  # Print a greeting message
+
+say_hello()  # Call the function to display the greeting
+
+
+##Passing Information to a Function
+def greet_person(name):
+    """Greets the user using their name."""
+    print(f"Hi, {name.title()}!")
+greet_person('zara')
+
+
+## Positional Arguments Example
+def pet_info(pet_type, pet_name):
+    print(f"My {pet_type} is named {pet_name.title()}.")
+
+# Function call with correct positional arguments
+pet_info('rabbit', 'snowy')  # Output: My rabbit is named Snowy.
+
+# Calling Function Multiple Times
+pet_info('rabbit', 'snowy')
+pet_info('parrot', 'coco')
+
+# Incorrect Order of Arguments
+pet_info('snowy', 'rabbit')  # Output: My snowy is named Rabbit.
+# Positional order matters—mixing them gives incorrect results.
+
+# Using Keyword Arguments
+pet_info(pet_type='rabbit', pet_name='snowy')
+pet_info(pet_name='snowy', pet_type='rabbit')
+# Keyword arguments allow you to pass values in any order.
+
+# Default Argument Values
+def pet_info(pet_name, pet_type='dog'):
+    print(f"My {pet_type} is named {pet_name.title()}.")
+
+# Flexible Function Calls
+pet_info('buster')              # Uses default pet_type='dog'
+pet_info('hammy', 'hamster')    # Overrides default value
+
+
+## Returning a String
+def full_name(first, last):
+    return f"{first} {last}".title()
+
+print(full_name('sara', 'khan'))  # Output: Sara Khan
+
+# Handling Optional Middle Name
+def full_name(first, last, middle=''):
+    if middle:
+        return f"{first} {middle} {last}".title()
+    else:
+        return f"{first} {last}".title()
+
+print(full_name('sara', 'khan'))            # Output: Sara Khan
+print(full_name('sara', 'khan', 'ali'))     # Output: Sara Ali Khan
+
+# Returning Multiple Values
+def full_name(first, middle, last):
+    return f"{first} {middle} {last}".title(), middle.title()
+
+name, middle = full_name('sara', 'ali', 'khan')
+print(name)    # Output: Sara Ali Khan
+print(middle)  # Output: Ali
+
+# Returning a Dictionary
+def create_person(first, last):
+    return {'first': first, 'last': last}
+
+print(create_person('sara', 'khan'))  # Output: {'first': 'sara', 'last': 'khan'}
+
+# Add more details with optional age
+def create_person(first, last, age=None):
+    person = {'first': first, 'last': last}
+    if age:
+        person['age'] = age
+    return person
+
+print(create_person('sara', 'khan', age=21))  # Output: {'first': 'sara', 'last': 'khan', 'age': 21}
+
+# Using While Loop with Function
+def full_name(first, last):
+    return f"{first} {last}".title()
+
+while True:
+    print("\nType 'q' to quit")
+    f_name = input("First Name: ")
+    if f_name.lower() == 'q':
+        break
+    l_name = input("Last Name: ")
+    if l_name.lower() == 'q':
+        break
+    print(f"Hello, {full_name(f_name, l_name)}!")
+
+
+## Passing Lists to Functions
+def greet_users(user_list):
+    # Greet each user in the list
+    for user in user_list:
+        print(f"Welcome, {user.title()}!")
+
+names = ['zain', 'ali', 'mira']
+greet_users(names)  # Calls function and prints welcome messages
+
+
+# Modifying Lists in a Function
+def process_tasks(pending, completed):
+    # Move each task from pending to completed list
+    while pending:
+        task = pending.pop()
+        print(f"Processing: {task}")
+        completed.append(task)
+
+tasks = ['task1', 'task2']
+done = []
+process_tasks(tasks, done)
+
+print("\nCompleted tasks:", done)     # Output: ['task2', 'task1']
+print("Remaining tasks:", tasks)      # Output: [] — original list is emptied
+
+
+# Preventing Original List Modification
+# Pass a copy of the list using slicing
+tasks = ['task1', 'task2']
+done = []
+
+process_tasks(tasks[:], done)  # This won't change the original 'tasks' list
+
+print("\nOriginal tasks list (unchanged):", tasks)  # Output: ['task1', 'task2']
+print("Completed tasks (from copy):", done)         # Output: ['task2', 'task1']
